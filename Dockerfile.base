@@ -29,8 +29,10 @@ RUN set -x \
 RUN mkdir -p /usr/local/bin/widevine_cdm
 COPY widevine_cdm/* /usr/local/bin/widevine_cdm/
 
-RUN adduser -D app app
-
+RUN adduser -D app app \
+    && chmod -R 775 /tmp \
+    && chgrp -R app /tmp
+    
 WORKDIR /home/app
 USER app
 
@@ -41,8 +43,7 @@ ENV VIRTUAL_ENV=venv
 
 # create venv and set some permissions to allow running the container as non-root
 RUN python3 -m venv $VIRTUAL_ENV && \
-    chmod -R 777 $VIRTUAL_ENV && \
-    chmod -R 777 /tmp && \
+    
     source ./venv/scripts/common/activate && \
     pip install --upgrade pip \
     && pip install uv==0.4.17
