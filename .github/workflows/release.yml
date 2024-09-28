@@ -162,7 +162,7 @@ jobs:
       - build-artifact
       - pypi-publish
       - build-and-push-container-image
-      - release-notes-update
+      # - release-notes-update
     runs-on: ubuntu-latest
     steps:
       - name: Push new version number to addon config
