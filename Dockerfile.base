@@ -45,7 +45,7 @@ RUN python3 -m venv $VIRTUAL_ENV && \
     chmod -R 777 /tmp && \
     source ./venv/scripts/common/activate && \
     pip install --upgrade pip \
-    && pip install uv==0.2.27
+    && pip install uv==0.4.17
 
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 WORKDIR $VIRTUAL_ENV
