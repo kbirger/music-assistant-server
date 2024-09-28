@@ -29,7 +29,7 @@ RUN set -x \
 RUN mkdir -p /usr/local/bin/widevine_cdm
 COPY widevine_cdm/* /usr/local/bin/widevine_cdm/
 
-RUN adduser app app
+RUN adduser -D app app
 
 WORKDIR /home/app
 USER app
