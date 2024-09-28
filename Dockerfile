@@ -6,7 +6,7 @@
 
 ARG BASE_IMAGE_VERSION=latest
 
-FROM ghcr.io/music-assistant/base:$BASE_IMAGE_VERSION
+FROM ghcr.io/kbirger/base:$BASE_IMAGE_VERSION
 
 ARG MASS_VERSION
 ARG TARGETPLATFORM
