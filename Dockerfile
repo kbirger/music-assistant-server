@@ -15,7 +15,7 @@ ADD dist dist
 RUN uv pip install \
     --no-cache \
     --find-links "https://wheels.home-assistant.io/musllinux/" \
-    "music-assistant[server]@dist/music_assistant-2.2.6-py3-none-any.whl"
+    "music-assistant[server]@dist/music_assistant-${MASS_VERSION}-py3-none-any.whl"
 
 # Set some labels
 LABEL \
